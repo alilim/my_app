@@ -1,0 +1,21 @@
+<% @client.user_recent_media.each do |media_item| %>
+            <article>
+              <div class="gallery-wrapper">
+                <%= image_tag media_item.images.low_resolution.url, :class => 'gallery-main-image' %>
+                <div class="caption <%= ['hidden', 'show'].sample %>" >
+                  <h3>Thumbnail label</h3>
+                  <p><%= media_item.caption.text %></p>
+                  <p>
+                    <span> LikesCount=<%= media_item.likes[:count] %></span>
+                  </p>
+                </div>
+              </div>
+            </article>
+          <% end %>
+
+
+          <img src="<%= @user.profile_picture  %>" >
+          <h1>Hello, I am <%= @user.full_name %>!</h1>
+          <p>
+            <%= link_to 'Find me here!', 'https://instagram.com/'+@user.username,  :class => 'button', :role => 'button' %>
+          </p>
