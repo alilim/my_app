@@ -13,6 +13,8 @@ function kFormatter(num) {
 
 $(function(){
 
+  var width_window = $(window).width();
+
   // initial Masonry style, use for display gallery
   var container = $('#masonry-container');
   container.imagesLoaded(function(){
@@ -59,7 +61,8 @@ $(function(){
       for (;media[i];) {
         //console.log(media[i]);
         image = media[i].images.low_resolution.url;
-        class_caption = ((media[i].caption === null) ? "hidden" :  display[Math.floor(Math.random()*display.length)]);
+        if(width_window >= 992)
+          class_caption = ((media[i].caption === null) ? "hidden" :  display[Math.floor(Math.random()*display.length)]);
         caption = ((media[i].caption === null) ? " " :  trim_words(media[i].caption.text, 25)+ '..');
         full_caption = ((media[i].caption === null) ? " " :  media[i].caption.text);
         love = kFormatter(media[i].likes.count);

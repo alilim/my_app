@@ -46,7 +46,7 @@ This project is using Instagram API, but without authorize access. So you didn't
 
 * client_id & client_secret is provided from Instagram client manager API, at https://instagram.com/developer/ 
 
-* user_id is User id of Instagram member, you can look up for your instagram id, at jelled.com/instagram/lookup-user-id 
+* user_id is User id of Instagram member, you can look up for your instagram id, at http://jelled.com/instagram/lookup-user-id
 
 
 Noted: This application didn't use any database and database configuration.

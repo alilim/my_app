@@ -1,9 +1,34 @@
 @import url(http://fonts.googleapis.com/css?family=Roboto:400,900,700);
 @import url(http://fonts.googleapis.com/css?family=Open+Sans);
 
+*, html {
+  font-size: 99%;
+}
+
+body {
+  background-color: #E3E3E3;
+  font-family: "Helvetica Neue", Helvetica, 'Open Sans', sans-serif;
+  font-size: 1rem;
+}
+
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Roboto', sans-serif;
   font-weight: 900;
+}
+
+.block-center {
+  margin: 0 auto;
+  float: none;
+}
+
+.invisible {
+  opacity: 0;
+  transition: opacity .1s linear;
+}
+
+.visible {
+  opacity: 1;
+  transition: opacity .5s linear;
 }
 
 .love-icon { 
@@ -32,7 +57,7 @@ h1, h2, h3, h4, h5, h6 {
     position: absolute;
     content: " / ";
     color: #ddd;
-    font-size: 15px;
+    font-size: .9375rem;
     left: -7px;
     top: -3px;
   }
@@ -53,30 +78,10 @@ h1, h2, h3, h4, h5, h6 {
   width: 44px;
   height: 36px;
   display: block;
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
+  position: absolute;
+  bottom: 30px;
+  right: 10px;
   display: none;
-}
-
-body {
-  background-color: #E3E3E3;
-  font-family: "Helvetica Neue", Helvetica, 'Open Sans', sans-serif;
-}
-
-.block-center {
-  margin: 0 auto;
-  float: none;
-}
-
-.invisible {
-  opacity: 0;
-  transition: opacity .1s linear;
-}
-
-.visible {
-  opacity: 1;
-  transition: opacity .5s linear;
 }
 
 .navbar-gallery {
@@ -95,15 +100,18 @@ body {
   .navbar-nav {
     margin-top: 10px;
   }
+  .navbar-collapse, .navbar-form {
+    border-color: transparent;
+  }
   .intro {
     margin: 0;
     margin-left: 20px;
     color: #fff;
-    font-size: 16px;
     text-transform: uppercase;
     line-height: 20px;
     padding-top: 5px;
     display: block;
+    font-size: 1rem;
   }
 }
 
@@ -124,7 +132,7 @@ body {
       margin: 5px 5px 0;
       cursor: pointer;
       text-decoration: none;
-      font-size: 10px;
+      font-size: .625rem;
       width: 15px;
       height: 15px;
       display: block;
@@ -156,7 +164,7 @@ body {
 
 .grid-masonry {
   article {
-    width: 250px;
+    width: 300px;
     margin-bottom: 15px;
     background-color: #FFFFFF;
     box-shadow:0px 0px 4px rgba(0, 0, 0, 0.2);
@@ -252,13 +260,6 @@ body {
   text-align: center;
 }
 
-footer {
-  text-align: center;
-  small {
-    color: #aaa;
-  }
-}
-
 .gallery-modal {
   .modal-content, .modal-body {
     overflow: hidden;
@@ -274,7 +275,7 @@ footer {
     }
     p {
       padding: 15px;
-      font-size: 13px;
+      font-size: .9375rem;
       padding-bottom: 0;
     }
   }
@@ -287,7 +288,7 @@ footer {
     top: 5px;
     right: 10px;
     z-index: 10;
-    font-size: 30px;
+    font-size: 1.875rem;
     color: #fff;
     text-shadow: 0px 1px 0px #000;
     opacity: 1;
@@ -295,3 +296,70 @@ footer {
     padding: 0;
   }
 }
+
+footer {
+  text-align: center;
+  small {
+    color: #aaa;
+    width: 80%;
+    line-height: normal;
+    margin-bottom: 15px;
+  }
+}
+
+
+/* for xs only (xtra small / mobile) */
+@media(max-width:767px){
+  .navbar-right {
+    display: none;
+  }
+}
+
+/* for sm (Small devices Tablets) */
+@media(min-width:768px){ 
+  .scroll-top {
+    right: 20px;
+  }
+  .navbar-gallery {
+    .intro {
+      font-size: 1.25rem;
+    }
+  }
+  .grid-masonry {
+    article {
+      width: 280px;
+    }
+  }
+}
+
+/* for md (Medium devices Desktops) */
+@media(min-width:992px){
+  *, html {
+    font-size: 98%;
+  }
+  .navbar-gallery {
+    .intro {
+      padding-top: 8px;
+      font-size: 1.4375rem;
+    }
+  } 
+  .grid-masonry {
+    article {
+      width: 250px;
+    }
+  }
+  .gallery-modal {
+    .modal-body {
+      p {
+        font-size: .8125rem;
+      }
+    }
+  } 
+}
+
+/* for lg (Large devices Desktops) */
+@media(min-width:1200px){
+  
+}
+
+
