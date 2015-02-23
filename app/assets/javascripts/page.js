@@ -37,7 +37,7 @@ $(function(){
       $('.brand-image').attr('src',user.profile_picture);
       $('.intro').text('Hello, I am /'+user.full_name);
       $('.instagram-icon').attr('href', 'https://instagram.com/'+user.username);
-      console.log($('.author'));
+      //console.log($('.author'));
       $('.author').text(user.full_name);
     }); 
   }
@@ -52,6 +52,7 @@ $(function(){
     })
     .done(function( data ) {
       if(data.meta.code != 200 ) $('.no-data').text('There is problem when Fetching Photo from Instagram, Please try again');
+      //$('#masonry-container').masonry('reload');
       var media = data.data, pagination = data.pagination;
       var html = '', caption = '', full_caption = '', class_caption = 'show', share = '', image = '', love = '', gallery_info = '', i = 0;
       var display = ['hideout' , 'show'];
@@ -65,7 +66,7 @@ $(function(){
         share = 'https://www.facebook.com/dialog/feed?app_id=1405547613083499&display=popup&caption='+encodeURI("Share My Instagram Photo")+'&description='+encodeURI("Share My Instagram Photo")+'&link='+encodeURIComponent(base_url+"/page/index/"+media[i].id)+'&picture='+media[i].images.standard_resolution.url+'&redirect_uri='+encodeURIComponent(base_url+"/page");
         gallery_info = '<span class="detail-image">'+ image +'</span><span class="detail-caption">'+ full_caption +'</span><span class="detail-love">'+ love +'</span><span class="detail-facebook">'+ share +'</span>';
 
-        html += '<article> <div class="gallery-wrapper">';
+        html += '<article class="invisible"> <div class="gallery-wrapper">';
         html += '<img src="'+ image +'" class="gallery-main-image" />';
         html += '<div class="caption ' + class_caption + '" >';
         html += '<p>'+ caption +'</p>';
@@ -76,7 +77,10 @@ $(function(){
       $('.insta-info .next-url').html('').html(pagination.next_url); 
       $('.insta-info .next-max-id').html('').html(pagination.next_max_id); 
       $('.preloading').hide();
-      $('#masonry-container').append(html).masonry( 'reload' );
+      container.append(html).imagesLoaded(function(){
+        container.masonry('reload');
+        $('article.invisible').removeClass('invisible').addClass('visible');
+      });
       $('.detail-icon').click(function(e){
         e.preventDefault();
         var gallery_info = $(this).parent();

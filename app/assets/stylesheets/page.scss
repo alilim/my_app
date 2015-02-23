@@ -69,6 +69,16 @@ body {
   float: none;
 }
 
+.invisible {
+  opacity: 0;
+  transition: opacity .1s linear;
+}
+
+.visible {
+  opacity: 1;
+  transition: opacity .5s linear;
+}
+
 .navbar-gallery {
   background-color: #000;
   border: 0;
