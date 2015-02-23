@@ -1,0 +1,8 @@
+instagram:
+  client_id: 9039461a6abe4c22be589c92e5024883
+  client_secret: 96e669431bb6470f9e274bb17bd5cbbe
+  user_id: 6412892
+  #user_id: 30625982
+
+url:
+  base: http://localhost:3000

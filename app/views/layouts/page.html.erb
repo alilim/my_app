@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>My App </title>
+  <%= stylesheet_link_tag 'application', :media => 'all'  %>
+
+  <script>
+    var base_url = '<%= Settings.url.base  %>';
+  </script>
+
+</head>
+<body>
+  <header>
+    <nav class="navbar navbar-default navbar-gallery">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-gallery-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">
+            <%= image_tag 'icons/profile.png', :class => 'brand-image' %>
+          </a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="navbar-gallery-collapse">
+          <ul class="nav navbar-nav">
+            <li><h2 class="intro"></h2></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><%= link_to '', '',  :class => 'button instagram-icon', :alt => 'Follow my Instagram', :title => 'Follow my Instagram', :target => '_blank' %></li> 
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <%= yield %>
+
+  <footer>
+    <small>Thank you to <span class="author"></span>, for presenting this beautiful picture. All &copy; and credit belongs to <span class="author"></span> itself.</small>
+  </footer>
+
+  <%= javascript_include_tag 'application'  %>
+
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="rows">
+    <section class="col-xs-12 gallery-photo">
+      <div class="rows">
+        <div class="insta-info hidden">
+          <span class="next-max-id"></span>
+          <span class="next-url"></span>
+          <span class="detail-id"><%= @media_id %></span>
+        </div>
+        <div id="masonry-container" class="transitions-enabled infinite-scroll block-center clearfix grid-masonry">
+          
+        </div>
+        <p class="no-data block-center"></p>
+        <div class="preloading clearfix"></div>
+        <%= link_to 'Load earlier', '#', :class => 'button center-block load-more' , :alt => 'load earlier photo', :title => 'load earlier photo' %>
+        <%= link_to '', '#', :class => 'scroll-top', :alt => 'scroll to top', :title => 'scroll to top' %>
+      </div>
+    </section>
+  </div>
+</div>
+
+<div class="modal fade gallery-modal" id="gallery-detail" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <div class="modal-body">
+        <%= image_tag '', :class => 'gallery-detail-image' %>
+        <p class="gallery-detail-caption"></p>
+      </div>
+      <div class="modal-footer">
+        <div class="action">
+          <%= link_to '', '#', :class => 'love-icon' %>
+          <%= link_to '', '', :class => 'facebook-icon' , :title => 'share to facebook', :alt => 'share to facebook' %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
