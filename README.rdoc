@@ -49,6 +49,11 @@ This project is using Instagram API, but without authorize access. So you didn't
 * user_id is User id of Instagram member, you can look up for your instagram id, at http://jelled.com/instagram/lookup-user-id
 
 
+=== Demo 
+
+I uploaded it live with Ruby on Rails, Passenger and Apache at http://www.alilim.com
+
+
 Noted: This application didn't use any database and database configuration.
 
 This is my first's finished Ruby on Rails project, Sorry if there is anything not correct.
