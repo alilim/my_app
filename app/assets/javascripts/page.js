@@ -66,7 +66,8 @@ $(function(){
         caption = ((media[i].caption === null) ? " " :  trim_words(media[i].caption.text, 25)+ '..');
         full_caption = ((media[i].caption === null) ? " " :  media[i].caption.text);
         love = kFormatter(media[i].likes.count);
-        share = 'https://www.facebook.com/dialog/feed?app_id=1405547613083499&display=popup&caption='+encodeURI("Share My Instagram Photo")+'&description='+encodeURI("Share My Instagram Photo")+'&link='+encodeURIComponent(base_url+"/page/index/"+media[i].id)+'&picture='+media[i].images.standard_resolution.url+'&redirect_uri='+encodeURIComponent(base_url+"/page");
+        //share = 'https://www.facebook.com/dialog/feed?app_id=1405547613083499&display=popup&caption='+encodeURI("Share My Instagram Photo")+'&description='+encodeURI("Share My Instagram Photo")+'&link='+encodeURIComponent(base_url+"/page/index/"+media[i].id)+'&picture='+media[i].images.standard_resolution.url+'&redirect_uri='+encodeURIComponent(base_url+"/page");
+        share = 'https://www.facebook.com/dialog/feed?app_id=1405547613083499&display=popup&caption='+escape("Share My Instagram Photo")+'&description='+escape(full_caption)+'&link='+encodeURIComponent('https://instagram.com')+'&picture='+media[i].images.standard_resolution.url+'&redirect_uri='+encodeURIComponent(base_url+"/page");
         gallery_info = '<span class="detail-image">'+ image +'</span><span class="detail-caption">'+ full_caption +'</span><span class="detail-love">'+ love +'</span><span class="detail-facebook">'+ share +'</span>';
 
         html += '<article class="invisible"> <div class="gallery-wrapper">';
@@ -124,9 +125,9 @@ $(function(){
     .done(function( data ) {
       if(data.meta.code != 200 ) return;
       var detail = data.data;
-
-      var share = 'https://www.facebook.com/dialog/feed?app_id=1405547613083499&display=popup&caption='+encodeURI("Share My Instagram Photo")+'&description='+encodeURI("Share My Instagram Photo")+'&link='+encodeURIComponent(base_url+"/page/index/"+media_id)+'&picture='+detail.images.standard_resolution.url+'&redirect_uri='+encodeURIComponent(base_url+"/page");
-
+      var full_caption = ((detail.caption === null) ? " " :  detail.caption.text);
+      //var share = 'https://www.facebook.com/dialog/feed?app_id=1405547613083499&display=popup&caption='+encodeURI("Share My Instagram Photo")+'&description='+encodeURI("Share My Instagram Photo")+'&link='+encodeURIComponent(base_url+"/page/index/"+media_id)+'&picture='+detail.images.standard_resolution.url+'&redirect_uri='+encodeURIComponent(base_url+"/page");
+      var share = 'https://www.facebook.com/dialog/feed?app_id=1405547613083499&display=popup&caption='+escape("Share My Instagram Photo")+'&description='+escape(full_caption)+'&link='+encodeURIComponent('https://instagram.com')+'&picture='+detail.images.standard_resolution.url+'&redirect_uri='+encodeURIComponent(base_url+"/page");
       $('.gallery-detail-image').attr('src', '').attr('src', detail.images.standard_resolution.url);
       $('.gallery-detail-caption').text(detail.caption.text);
       $('.gallery-modal .love-icon').html('<i>'+kFormatter(detail.likes.count)+'</i>');
