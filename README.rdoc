@@ -15,7 +15,7 @@ WEBrick 1.3.1
 
 For this project work, you need to install Ruby on Rails 
 
-If you need information for set up Ruby on Rails on your machine, you can visit [Setup Link](https://gorails.com/setup "Setup Ruby on Rails on your machine")
+If you need information for set up Ruby on Rails on your machine, you can visit https://gorails.com/setup
 
 
 ==== Install step
@@ -44,9 +44,9 @@ This project is using Instagram API, but without authorize access. So you didn't
     client_secret: 96e669431bb6470f9e274bb17bd5cbbe
     user_id: 6412892
 
-* client_id & client_secret is provided from Instagram client manager API, at [Instagram Developer Link](https://instagram.com/developer/ "Register and get your own Id") 
+* client_id & client_secret is provided from Instagram client manager API, at https://instagram.com/developer/ 
 
-* user_id is User id of Instagram member, you can look up for your instagram id, at [Lookup User Id Jelled Link](jelled.com/instagram/lookup-user-id "Lookup User Id Instagram") 
+* user_id is User id of Instagram member, you can look up for your instagram id, at jelled.com/instagram/lookup-user-id 
 
 
 Noted: This application didn't use any database and database configuration.
