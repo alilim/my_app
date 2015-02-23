@@ -37,7 +37,7 @@ $(function(){
       $('.brand-image').attr('src',user.profile_picture);
       $('.intro').text('Hello, I am /'+user.full_name);
       $('.instagram-icon').attr('href', 'https://instagram.com/'+user.username);
-      console.log($('.author'));
+      //console.log($('.author'));
       $('.author').text(user.full_name);
     }); 
   }
@@ -52,6 +52,7 @@ $(function(){
     })
     .done(function( data ) {
       if(data.meta.code != 200 ) $('.no-data').text('There is problem when Fetching Photo from Instagram, Please try again');
+      //$('#masonry-container').masonry('reload');
       var media = data.data, pagination = data.pagination;
       var html = '', caption = '', full_caption = '', class_caption = 'show', share = '', image = '', love = '', gallery_info = '', i = 0;
       var display = ['hideout' , 'show'];
@@ -76,7 +77,9 @@ $(function(){
       $('.insta-info .next-url').html('').html(pagination.next_url); 
       $('.insta-info .next-max-id').html('').html(pagination.next_max_id); 
       $('.preloading').hide();
-      $('#masonry-container').append(html).masonry( 'reload' );
+      container.append(html).imagesLoaded(function(){
+        container.masonry('reload');
+      });
       $('.detail-icon').click(function(e){
         e.preventDefault();
         var gallery_info = $(this).parent();
