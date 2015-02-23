@@ -1,8 +1,8 @@
-== README ==
+== README 
 
-### This Microsite is developed by using Ruby Programming Language which Rails as framework ###
+-- This Microsite is developed by using Ruby Programming Language which Rails as framework
 
-## Initial version development ##
+## Initial version development
 * Ruby version
 ruby 2.1.3 (2014-09-19 revision 47630) [x86_64-darwin14.0]
 
@@ -18,7 +18,7 @@ For this project work, you need to install Ruby on Rails
 If you need information for set up Ruby on Rails on your machine, you can visit [Setup Link](https://gorails.com/setup "Setup Ruby on Rails on your machine")
 
 
-## Install step ##
+## Install step
 
 1. at Terminal, on rails directory run <tt>bundle install</tt>
    It is purposed to install all gems that needed to run this microsite like 'Jquery', 'Masonry', 'Sass', and others
@@ -31,13 +31,13 @@ If you need information for set up Ruby on Rails on your machine, you can visit 
 
 
 
-## What is inside this Microsite? ##
+## What is inside this Microsite?
 
 It is photo gallery microsite, Grep data from Instagram and share the photo with Facebook share.
 
 This project is using Instagram API, but without authorize access. So you didn't need to login Instagram to use it.
 
-## Configuration of instagram is located at 'config/settings/development.yml' ##
+## Configuration of instagram is located at 'config/settings/development.yml'
 
 <tt>
 instagram:
