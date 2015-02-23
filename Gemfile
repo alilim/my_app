@@ -28,6 +28,8 @@ gem 'jquery-rails'
 gem 'sdoc', '~> 0.4.0', group: :doc
 # RailsConfig helps you easily manage environment specific Rails settings in an easy and usable manner
 gem 'rails_config'
+# Use modenizer for style callback
+gem 'modernizr-rails'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

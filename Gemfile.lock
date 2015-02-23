@@ -82,6 +82,7 @@ GEM
     mime-types (2.4.3)
     mini_portile (0.6.2)
     minitest (5.5.1)
+    modernizr-rails (2.7.1)
     multi_json (1.10.1)
     multipart-post (2.0.0)
     nokogiri (1.6.6.2)
@@ -163,6 +164,7 @@ DEPENDENCIES
   instagram
   jquery-rails
   masonry-rails (~> 0.2.4)
+  modernizr-rails
   rails (= 4.2.0)
   rails_config
   sass-rails (~> 5.0)
