@@ -66,7 +66,7 @@ $(function(){
         share = 'https://www.facebook.com/dialog/feed?app_id=1405547613083499&display=popup&caption='+encodeURI("Share My Instagram Photo")+'&description='+encodeURI("Share My Instagram Photo")+'&link='+encodeURIComponent(base_url+"/page/index/"+media[i].id)+'&picture='+media[i].images.standard_resolution.url+'&redirect_uri='+encodeURIComponent(base_url+"/page");
         gallery_info = '<span class="detail-image">'+ image +'</span><span class="detail-caption">'+ full_caption +'</span><span class="detail-love">'+ love +'</span><span class="detail-facebook">'+ share +'</span>';
 
-        html += '<article> <div class="gallery-wrapper">';
+        html += '<article class="invisible"> <div class="gallery-wrapper">';
         html += '<img src="'+ image +'" class="gallery-main-image" />';
         html += '<div class="caption ' + class_caption + '" >';
         html += '<p>'+ caption +'</p>';
@@ -79,6 +79,7 @@ $(function(){
       $('.preloading').hide();
       container.append(html).imagesLoaded(function(){
         container.masonry('reload');
+        $('article.invisible').removeClass('invisible').addClass('visible');
       });
       $('.detail-icon').click(function(e){
         e.preventDefault();
